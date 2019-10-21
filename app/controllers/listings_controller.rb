@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    if @kustubg.update(listing_params)
+    if @listing.update(listing_params)
       redirect_to @listing
     else
       render :edit

@@ -1,5 +1,10 @@
-<h1>Creating a new Breed:</h1>
+<section class="container"> 
+  <div class="inside-container">
+    <div class="sidenav-hp"> 
+      <%= render '/pages/nav' %>
+      
+      <h1>Creating a new Breed:</h1>
 
-<%= render 'form', breed: @breed %>
-
-<%= link_to 'Back', breeds_path %>
+      <%= render 'form', breed: @breed %>
+  </div>
+</section>

@@ -61,7 +61,10 @@
         <%= form.select :breed_id,
      options_for_select( Breed.all.collect { |u| [u.name, u.id] }, :selected => listing.breed_id ) %>
     </div>
-
+    <div>
+        <%= form.label :trait_id %>
+        <%= %>
+    </div>
     <div>
         <%= form.label :picture %>
         <%= form.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>

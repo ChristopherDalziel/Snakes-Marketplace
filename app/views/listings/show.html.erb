@@ -1,58 +1,69 @@
-<h1>Displaying a snake</h1>
+<section class="container"> 
+  <div class="inside-container">
+    <div class="sidenav-hp"> 
+      <%= render '/pages/nav' %>
+    </div>
+      <h1>Displaying a snake</h1>
 
-<p>
-  <%= image_tag @listing.picture if @listing.picture.attached? %>
-</p>
+      <p>
+        <%= image_tag @listing.picture if @listing.picture.attached? %>
+      </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
+      <p>
+        <strong>Title:</strong>
+        <%= @listing.title %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @listing.description %>
+      </p>
 
-<p>
-  <strong>Breed ID:</strong>
-  <%= @listing.breed_id %>
-</p>
+      <p>
+        <strong>Breed ID:</strong>
+        <%= @listing.breed_id %>
+      </p>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @listing.sex %>
-</p>
+      <p>
+        <strong>Sex:</strong>
+        <%= @listing.sex %>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
+      <p>
+        <strong>Price:</strong>
+        <%= @listing.price %>
+      </p>
 
-<p>
-  <strong>Deposit:</strong>
-  <%= @listing.deposit %>
-</p>
+      <p>
+        <strong>Deposit:</strong>
+        <%= @listing.deposit %>
+      </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @listing.city %>
-</p>
+      <p>
+        <strong>City:</strong>
+        <%= @listing.city %>
+      </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @listing.state %>
-</p>
+      <p>
+        <strong>State:</strong>
+        <%= @listing.state %>
+      </p>
 
-<p>
-  <strong>Date of Birth:</strong>
-  <%= @listing.date_of_birth %>
-</p>
+      <p>
+        <strong>Date of Birth:</strong>
+        <%= @listing.date_of_birth %>
+      </p>
 
-<p>
-  <strong>Diet:</strong>
-  <%= @listing.diet %>
-</p>
+      <p>
+        <strong>Diet:</strong>
+        <%= @listing.diet %>
+      </p>
 
-<%= link_to 'Edit', edit_listing_path %>
-<%= link_to 'Back', listings_path %>
+      <p>
+        <strong>Trait:</strong>
+        <% @listing.traits.each do |trait| %>
+        <%= trait.name %>
+        <% end %>
+      </p>
+  </div>
+</section>

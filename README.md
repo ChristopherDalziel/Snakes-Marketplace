@@ -1,9 +1,8 @@
-# README
+First attempt at a Ruby on Rails application using a database to create a simple Snake marketplace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](/app/assets/images/snake_home.png)
 
-Things you may want to cover:
+<!-- Things you may want to cover: -->
 
 * Ruby version
 
@@ -20,5 +19,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...

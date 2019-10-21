@@ -1,0 +1,54 @@
+.container {
+  height: 100vh;
+  background-color: white;
+  /* background-image: url(/assets/loch-ness-151851_1280); */
+}
+
+.inside-container {
+  height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.table-container {
+  height: 100%;
+  overflow-x: auto;
+}
+
+table {
+  border: 1px solid black;
+}
+
+th {
+  /* background-color: black;
+  color: white; */
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr:hover {background-color:lightgray;}
+
+p img {
+  height: 425px;
+}
+
+#hero {
+  width: 100vw;
+  height: 80vh;
+  text-align: center;
+}
+
+#hero img {
+  height: 80vh;
+  /* width: 35%; */
+  /* background-image: url(/assets/snake); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat;; */
+  
+}

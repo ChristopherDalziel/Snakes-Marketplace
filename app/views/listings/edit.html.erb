@@ -1,5 +1,10 @@
-<h1>Edit Snakes</h1>
+<section class="container"> 
+  <div class="inside-container">
+    <div class="sidenav-hp"> 
+      <%= render '/pages/nav' %>
+    </div>
 
-<%= render 'form', listing: @listing %>
-
-<%= link_to 'Back', listing_path %>
+    <h1>Edit Snakes</h1>
+    <%= render 'form', listing: @listing %>
+  </div>
+</section>

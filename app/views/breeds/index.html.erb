@@ -1,24 +1,32 @@
-<h1>Breeds Index</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Id Number:</th>
-      <th>Breed Name:</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @breeds.each do |breed| %>
-      <tr>
-        <td><%= breed.id %></td>
-        <td><%= breed.name %></td>
-        <td><%= link_to 'Show', breed_path(breed) %></td>
-        <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
-        <td><%= link_to 'Delete', breed_path(breed), method: :delete, data: { confirm: 'Are you sure?' }%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'Create', new_breed_path %>
-<%= link_to 'Home', root_path %>
+<section class="container"> 
+  <div class="inside-container">
+    <div class="sidenav-hp"> 
+      <%= render '/pages/nav' %>
+    </div>
+    <div class="table-container"><h1>Breeds Index</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Id Number:</th>
+            <th>Breed Name:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @breeds.each do |breed| %>
+            <tr>
+              <td><%= breed.id %></td>
+              <td><%= breed.name %></td>
+              <td><%= link_to 'Show', breed_path(breed) %></td>
+              <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
+              <td><%= link_to 'Delete', breed_path(breed), method: :delete, data: { confirm: 'Are you sure?' }%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to 'Create', new_breed_path %>
+      <%= link_to 'Home', root_path %>
+    </div>
+  </div>
+</section>

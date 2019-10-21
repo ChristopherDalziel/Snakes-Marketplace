@@ -14,9 +14,17 @@
  *= require_self
  */
 
+ @import url('https://www.w3schools.com/w3css/4/w3.css');
+ @import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&display=swap');
+
  * { 
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   margin: 0px;
+   padding: 0px;
+   color: black;
  }
+
+ 
 
  td {
    text-transform: capitalize;
@@ -26,6 +34,13 @@
    text-transform: capitalize;
  }
 
- field_with_errors {
-   
+ h1 {
+  font-family: 'Jolly Lodger', cursive;
+  font-size: 100px;
  }
+
+ /* field_with_errors {
+   
+ } */
+
+ 
