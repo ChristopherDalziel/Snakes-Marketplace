@@ -1,0 +1,12 @@
+/* #error_explanation {
+  background-color: red;
+} 
+
+div ul {
+  color: pink;
+  list-style: none;
+} */
+
+#error_explanation {
+  display: none;
+}

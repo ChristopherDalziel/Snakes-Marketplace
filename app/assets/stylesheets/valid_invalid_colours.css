@@ -1,0 +1,10 @@
+/* Only on focus */
+input:focus{ color: #222; background: #97ABBE; border-color:#999;}
+/*Only on valid*/
+input:valid{box-shadow: 0 0 2px rgba(0,255,0,0.4);}
+/*Only on focus and valid*/
+input:valid:focus{ background: #80BE93; box-shadow: none;  }
+/*Only on invalid*/
+input:invalid{box-shadow: 0 0 2px rgba(255,0,0,0.4);}
+/*Only on focus and invalid*/
+input:invalid:focus{ background: #CB9089; box-shadow: none;}
