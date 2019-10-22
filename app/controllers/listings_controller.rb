@@ -19,12 +19,12 @@ class ListingsController < ApplicationController
 
   def create
   
-    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture, :trait)
+    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
 
     # @listing = Listing.new(listing_params)
 
     @listing = current_user.listings.create(listing_params)
-
+    @listing.traits << Trait.find(params[:listing][:trait_id])
     @listing.save
 
     if @listing.save 
@@ -59,7 +59,7 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture, :trait)
+    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture, :trait_id)
   end
   
 

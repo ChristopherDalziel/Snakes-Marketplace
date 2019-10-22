@@ -61,7 +61,9 @@
 
       <p>
         <strong>Trait:</strong>
-        <%= @listing.traits %>
+        <% @listing.traits.each do |trait| %>
+        <%= trait.name %>
+        <% end %>
       </p>
   </div>
 </section>
