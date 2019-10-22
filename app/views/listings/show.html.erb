@@ -21,7 +21,7 @@
 
       <p>
         <strong>Breed ID:</strong>
-        <%= @listing.breed_id %>
+        <%= @listing.breed.name %>
       </p>
 
       <p>
@@ -61,9 +61,7 @@
 
       <p>
         <strong>Trait:</strong>
-        <% @listing.traits.each do |trait| %>
-        <%= trait.name %>
-        <% end %>
+        <%= @listing.traits %>
       </p>
   </div>
 </section>

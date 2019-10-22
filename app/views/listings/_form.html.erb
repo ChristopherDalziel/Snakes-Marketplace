@@ -61,7 +61,7 @@
         </div>
         <div>
             <%= form.label :trait_id %>
-            <%= %>
+            <%= form.select :trait_id, options_for_select( Trait.all.collect { |u| [u.name, u.id] }, :selected => listing.breed_id ) %>
         </div>
         <div>
             <%= form.label :picture %>
