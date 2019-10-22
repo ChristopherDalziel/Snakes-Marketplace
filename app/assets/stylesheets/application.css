@@ -37,6 +37,7 @@
  h1 {
   font-family: 'Jolly Lodger', cursive;
   font-size: 100px;
+  margin: 0;
  }
 
  /* field_with_errors {

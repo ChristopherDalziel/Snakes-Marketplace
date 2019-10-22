@@ -4,8 +4,6 @@
   margin: 10px;
   left: 98%;
   white-space: nowrap;
-  /* -webkit-transform-origin: center center; */
-  /* transform-origin: center center; */
   -webkit-transform: translate(-50%,-50%) rotate(90deg);
   /* transform: translate(-50%,-50%) rotate(90deg); */
 }
@@ -33,3 +31,29 @@ li {
 li a {
   text-decoration: none;
 }
+
+li a:hover {
+  text-decoration: underline;
+}
+
+form {
+  height: 80vh;
+  overflow: scroll;
+  margin-bottom: 10px;
+}
+
+/* Attempted centering form */
+label {
+  padding: 2px;
+  margin-right: 0.8em;
+  display: block
+}
+
+.submit-button {
+  margin-top: 10px;
+  /* margin-left: 4.5em; */
+}
+input {
+  color: black
+}
+

@@ -5,17 +5,30 @@
 }
 
 .inside-container {
-  height: 100vh;
+  height: 90%;
   margin-left: 20px;
   margin-right: 20px;
 }
 
-.table-container {
-  height: 100%;
+.table-container-breeds {
+  height: 100vh;
+  width: 99%;
   overflow-x: auto;
 }
 
+.table-container-snakes {
+  width: 99%;
+  overflow-x: auto;
+}
+
+.new_user {
+  height: 80%;
+}
+
+
 table {
+  /* height: 80%; */
+  width: 100%;
   border: 1px solid black;
 }
 
@@ -25,7 +38,7 @@ th {
 }
 
 th, td {
-  padding: 15px;
+  padding: 5px;
   text-align: left;
   border-bottom: 1px solid black;
 }
@@ -35,20 +48,16 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color:lightgray;}
 
 p img {
-  height: 425px;
+  height: 300px;
 }
 
 #hero {
-  width: 100vw;
-  height: 80vh;
+  width: 100%;
+  /* height: 80%; */
   text-align: center;
 }
 
 #hero img {
-  height: 80vh;
-  /* width: 35%; */
-  /* background-image: url(/assets/snake); */
-  /* background-size: 100%; */
-  /* background-repeat: no-repeat;; */
-  
+  height: 525px;
 }
+

@@ -1,76 +1,75 @@
 <%= form_with model: listing, local: true do |form| %>
     
-
-<% if @listing.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@listing.errors.count, "Error") %> prohibited this article from being saved:</h2>
- 
-    <ul>
-    <% @listing.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-    <div>
-        <%= form.label :title %>
-        <%= form.text_field :title, :autofocus => true, :required => true, :placeholder => "Enter Title here", :pattern => "[^1-9]*" %>
-    </div>
-    <div>
-        <%= form.label :description %>
-        <%= form.text_field :description, :required => true, :placeholder => "Enter a description of snakes", :pattern => "[^0-9]*"%>
-    </div>
-    <div>
-        <%= form.label :price %>
-        <%= form.number_field :price, min: 0 %>
-    </div>
-    <div>
-        <%= form.label :deposit %>
-        <%= form.number_field :deposit, min: listing.price %>    
-    </div>
-    <div>
-        <%= form.label :city %>
-        <%= form.text_field :city %>
-    </div>
-    <div>
-        <%= form.label :state %>
-        <%= form.text_field :state %>
-    </div>
-    <div>
-        <%= form.label :date_of_birth %>
-        <%= form.date_field :date_of_birth %>
-    </div>
-    <div>
-        <%= form.label :diet %>
-        <%= form.text_field :diet %>
-    </div>
-    <div>
-    <%= form.label :sex %>
-    <% Listing.sexes.keys.each do |sex| %>
-    <%= form.label sex %>
-    <%= form.radio_button :sex, sex %>
-    
-    <% if sex == listing.sex %>
-        <% form.radio_button :sex, :checked => true %> 
+<section class="form-listing">
+    <% if listing.errors.any? %>
+        <div id="error_explanation">
+            <ul>
+                <% listing.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
         <% end %>
-    <% end %>
-    </div>
-    <div>
-        <%= form.label :breed_id %>
-        <%= form.select :breed_id,
-     options_for_select( Breed.all.collect { |u| [u.name, u.id] }, :selected => listing.breed_id ) %>
-    </div>
-    <div>
-        <%= form.label :trait_id %>
-        <%= %>
-    </div>
-    <div>
-        <%= form.label :picture %>
-        <%= form.file_field :picture, accept: 'image/jpeg, image/gif, image/png, imgage/jpg' %>
-    </div>
 
-    <div>
-        <%= form.submit %>
-    </div>
-<% end %>
+        <div>
+            <%= form.label :title %>
+            <%= form.text_field :title, :autofocus => true, :required => true, :placeholder => "Enter Title here", :pattern => "[^1-9]*" %>
+        </div>
+        <div>
+            <%= form.label :description %>
+            <%= form.text_field :description, :required => true, :placeholder => "Enter a description of snakes", :pattern => "[^0-9]*"%>
+        </div>
+        <div>
+            <%= form.label :price %>
+            <%= form.number_field :price, min: 0 %>
+        </div>
+        <div>
+            <%= form.label :deposit %>
+            <%= form.number_field :deposit, min: listing.price %>    
+        </div>
+        <div>
+            <%= form.label :city %>
+            <%= form.text_field :city %>
+        </div>
+        <div>
+            <%= form.label :state %>
+            <%= form.text_field :state %>
+        </div>
+        <div>
+            <%= form.label :date_of_birth %>
+            <%= form.date_field :date_of_birth %>
+        </div>
+        <div>
+            <%= form.label :diet %>
+            <%= form.text_field :diet %>
+        </div>
+        <div>
+        <%= form.label :sex %>
+        <% Listing.sexes.keys.each do |sex| %>
+        <%= form.label sex %>
+        <%= form.radio_button :sex, sex %>
+        
+        <% if sex == listing.sex %>
+            <% form.radio_button :sex, :checked => true %> 
+            <% end %>
+        <% end %>
+        </div>
+        <div>
+            <%= form.label :breed_id %>
+            <%= form.select :breed_id,
+        options_for_select( Breed.all.collect { |u| [u.name, u.id] }, :selected => listing.breed_id ) %>
+        </div>
+        <div>
+            <%= form.label :trait_id %>
+            <%= %>
+        </div>
+        <div>
+            <%= form.label :picture %>
+            <%= form.file_field :picture, accept: 'image/jpeg, image/gif, image/png, imgage/jpg' %>
+        </div>
+
+        <div class="submit-button">
+            <%= form.submit %>
+        </div>
+    <% end %>
+</section>
