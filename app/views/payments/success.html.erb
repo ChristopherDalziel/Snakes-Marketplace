@@ -5,7 +5,11 @@
     </div>
 
     <h1> You've made a successful payment!</h1>
+    <%= "You purchased: #{@listing.title}" %> <br>
+    <%= image_tag @listing.picture if @listing.picture.attached? %> <br>
+    <%= "Purchase price: #{@listing.price}" %> <br>
+    <%= "Your contact email is: #{@user.email}" %>  
+    <%=  %>
 
-    <%= link_to 'Go to listings', listings_path %>
   </div>
 </section>

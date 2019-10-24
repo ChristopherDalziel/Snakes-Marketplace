@@ -12,11 +12,7 @@ class Listing < ApplicationRecord
 
   validates :price, numericality: true
 
-  validates :state, inclusion: { in: %w(VIC NSW WA TAS NT ACT QLD SA), :message => "%{value} is not a valid state" }
-
-  # validates :deposit, numericality: { only_integer: true, less_than: @listing.price }
- 
-  # validates_numericality_of :deposit, :greater_than_or_equal_to 
+  validates :state, inclusion: { in: %w(VIC NSW WA TAS NT ACT QLD SA), :message => "%{value} is not a valid state" } 
 
   validates_numericality_of :deposit, :only_integer => true, :less_than_or_equal_to => :price
 
