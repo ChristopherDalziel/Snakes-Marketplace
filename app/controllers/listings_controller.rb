@@ -5,12 +5,33 @@ class ListingsController < ApplicationController
   before_action :set_user_listing, only: [ :show, :edit, :update, :destroy ]
 
   def index
-      # @listings = Listing.all
-      @listings = current_user.listings
+      #Listing.all will show ALL of the snakes despite whoever is logged in.
+      @listings = Listing.all
+      # listing = current_user.listing will show ONLY the snakes created by the current logged
+      # @listings = current_user.listings
   end
 
   def show
-    
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: [ 'card' ],
+      customer_email: current_user.email,
+      line_items: [{
+        name: @listing.title,
+        description: @listing.description, 
+        amount: @listing.deposit * 100,
+        currency: 'aud',
+        quantity: 1
+      }],
+      payment_intent_data: {
+        metadata: {
+          user_id: current_user.id,
+          listing_id: @listing.id
+        }
+      }, success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@listing.id}",
+      cancel_url: "#{root_url}listings"
+    )
+
+   @session_id = session.id
   end
 
   def new
@@ -59,7 +80,7 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture, :trait_id)
+    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
   end
   
 
@@ -76,6 +97,10 @@ class ListingsController < ApplicationController
 
     if @listing == nil
       redirect_to listings_path
+    else
+      if @listing.deposit == nil
+        @listing.deposit = 0 #sometimes stripe doesn't allow a payment of zero? 
+      end
     end
 
   end

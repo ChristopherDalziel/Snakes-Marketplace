@@ -17,6 +17,7 @@
 }
 
 .table-container-snakes {
+  height: 100vh;
   width: 99%;
   overflow-x: auto;
 }

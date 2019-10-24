@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_232602) do
+ActiveRecord::Schema.define(version: 2019_10_24_024755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_232602) do
     t.bigint "breed_id"
     t.integer "sex"
     t.integer "price"
-    t.integer "deposit"
+    t.integer "deposit", default: 1, null: false
     t.string "city"
     t.string "state"
     t.date "date_of_birth"

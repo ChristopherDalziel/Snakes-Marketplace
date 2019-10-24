@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     delete "/breeds/:id", to: "breeds#destroy"
     get "/breeds/:id/edit", to: "breeds#edit", as: "edit_breed"
 
+    get "/payments/success", to: "payments#success"
+    post "/payments/webhook", to: "payments#webhook"
+
     get "*path", to: "pages#not_found", constraints: lambda { |req| req.path.exclude? 'rails/active_storage'}
 
 end
